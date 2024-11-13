@@ -1,0 +1,49 @@
+{
+	"name": "html-do-it",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"@iconify/json": "^2.2.259",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.1.2",
+		"@types/eslint": "^9.6.0",
+		"@types/node": "^22.7.7",
+		"eslint": "^9.0.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-import-resolver-alias": "^1.1.2",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-svelte": "^2.36.0",
+		"globals": "^15.0.0",
+		"prettier": "^3.1.1",
+		"prettier-plugin-svelte": "^3.1.2",
+		"sass-embedded": "^1.79.4",
+		"svelte": "^4.2.7",
+		"svelte-adapter-bun": "^0.5.2",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.0.0",
+		"typescript-eslint": "^8.0.0",
+		"unplugin-auto-import": "^0.18.3",
+		"unplugin-icons": "^0.19.3",
+		"vite": "^5.4.8"
+	},
+	"type": "module",
+	"dependencies": {
+		"@iconify-json/mdi": "^1.2.1",
+		"dart-sass": "^1.25.0",
+		"html-do-it": "file:",
+		"matter-js": "^0.20.0",
+		"unnamed-webapp": "file:",
+		"vite-plugin-icons": "^0.6.5",
+		"vite-plugin-require": "^1.2.14"
+	}
+}

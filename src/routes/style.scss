@@ -1,0 +1,8 @@
+@use "/src/styling.scss" as *;
+
+// Root Component
+.root {
+    @extend .fill_all;
+    @extend .align_items_center;
+    @extend .background;
+}

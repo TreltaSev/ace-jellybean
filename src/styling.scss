@@ -1,0 +1,316 @@
+@use "sass:math";
+@use "sass:color";
+
+// Sass Boiler Plate
+
+$color-primary: #DC5AA9;
+$color-background: #252023;
+$color-background-accent: #7B6472;
+$color-background-alt: #722E57;
+
+// <=== Functions ===>
+
+// Mixes $color_x with $percentage% of $color_y
+@function color_w_color($color_x, $color_y, $decimal) {
+  @return linear-gradient(
+      0deg,
+      rgba($color_y, $decimal) 0%,
+      rgba($color_y, $decimal) 100%
+    ),
+    $color_x;
+}
+
+// Color Classes
+.primary {
+  background: $color-primary;
+}
+
+.background {
+  background: $color-background;
+}
+
+.background-accent {
+  background: $color-background-accent;
+}
+
+.background-alt {
+  background: $color-background-alt;
+}
+
+// <=== Fonts ===>
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  src: url("assets/fonts/Lato.ttf");
+}
+
+@font-face {
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/DM Mono.ttf");
+}
+
+// <=== Styling ===>
+
+:root {
+  --primary: #{$color-primary};
+  --background: #{$color-background};
+  --background-accent: #{$color-background-accent};
+  --background-alt: #{$color-background-alt};
+}
+
+* {
+  user-select: none;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+}
+
+body .app {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+span {
+  font-family: "Lato";
+  font-size: 1em;
+  opacity: 0.9;
+}
+
+/* |Flex Types|
+Holds all the different types of flex types to make it easier
+to apply flex styling to different components.
+*/
+.flex {
+  display: flex;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.inline_flex {
+  display: inline-flex;
+}
+
+/* |Border Box|
+Border-box making sketches in figma actually accurate without having to rely
+on modifying margin.
+*/
+.border_box {
+  box-sizing: border-box;
+}
+
+/* |Text Types|
+Different text types depending on what is needed to do
+Normally not assigned directly but through a template.
+*/
+.text_large {
+  font-family: "Lato";
+  font-size: 1em;
+}
+
+.text_medium {
+  font-family: "Lato";
+  font-size: 0.625em;
+}
+
+.text_small {
+  font-size: "Lato";
+  font-size: 0.5em;
+}
+
+/* |Fill Types|
+Different fill types to accomplish different things
+*/
+.fill_all {
+  width: 100%;
+  height: 100%;
+}
+
+.fill_width {
+  width: 100%;
+}
+
+.fill_height {
+  height: 100%;
+}
+
+/* |Align Types|
+Different align types such as align center, start, end, and stretch
+*/
+.align_items_start {
+  align-items: start;
+}
+
+.align_items_center {
+  align-items: center;
+}
+
+.align_items_end {
+  align-items: end;
+}
+
+.align_self_stretch {
+  align-self: stretch;
+}
+
+.align_items_stretch {
+  align-items: stretch;
+}
+
+.align_items_flex_start {
+  align-items: flex-start;
+}
+
+.align_items_flex_end {
+  align-items: flex-end;
+}
+
+/* |Justify Types|
+Different justify types such as justify content center
+*/
+.justify_content_start {
+  justify-content: start;
+}
+
+.justify_content_center {
+  justify-content: center;
+}
+
+.justify_content_space_between {
+  justify-content: space-between;
+}
+
+.justify_content_end {
+  justify-content: end;
+}
+
+/* Fills width */
+.justify_self_stretch {
+  justify-self: stretch;
+}
+
+.justify_self_end {
+  justify-self: end;
+}
+
+/* |flex modifiers| 
+Different modifiers like flex shrink are used here
+*/
+.no_shrink {
+  flex-shrink: 0;
+}
+
+/* |span modifiers|
+Different modifiers for text like no-wrap
+*/
+.white_space_nowrap {
+  white-space: nowrap;
+}
+
+.text_overflow_ellipsis {
+  text-overflow: ellipsis;
+}
+
+/* |overflow modifiers|
+Overflow customization
+*/
+
+.overflow_hidden {
+  overflow: hidden;
+}
+
+/* |Text align|
+Text aligns
+*/
+
+.text_align_center {
+  text-align: center;
+}
+
+/* |Decals|
+Extras
+*/
+.no_border {
+  border: none;
+}
+
+.no_outline {
+  outline: none;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.color_dodge {
+  background-blend-mode: color-dodge;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* |Position|
+*/
+.position_absolute {
+  position: absolute;
+}
+
+.position_relative {
+  position: relative;
+}
+
+.position_top_left {
+  top: 0;
+  left: 0;
+}
+
+/* |Before|
+*/
+
+/* Before Position Absolute (pa) Fill All (fa) Top Left (tl)*/
+.before_pa_fa_tl {
+  @extend .position_absolute;
+  @extend .fill_all;
+  @extend .position_top_left;
+  content: "";
+}
+
+/* |Transition|
+*/
+.transition_all_100ms_easeio_0s {
+  transition: all 200ms ease-in-out 0s;
+}
+
+/* |Hugs|
+*/
+.hug_left {
+  margin-right: auto;
+}
+
+.hug_top {
+  margin-bottom: auto;
+}
+
+.hug_right {
+  margin-left: auto;
+}
+
+.hug_bottom {
+  margin-top: auto;
+}
