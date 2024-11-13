@@ -1,35 +1,15 @@
 <script lang="ts">
-	import Text from "@lib/components/Text.svelte";
+	import InteractiveEngine from "@lib/components/Interactive";
+    import { interactiveEngine } from "@lib/stores/interactive";
+    import type { Action } from "svelte/action";
+    import Text from "@lib/components/Text.svelte";
 
-    /*
-    <script lang="ts">
-    import Matter from "matter-js"
-    
-    var engine = Matter.Engine.create();
+    const initInteractive: Action<HTMLCanvasElement> = (node) => {
+        $interactiveEngine = new InteractiveEngine(node);
+        $interactiveEngine.start();
+    }
 
-    // Render
-    var render = Matter.Render.create({
-        element: document.body,
-        engine: engine
-    })
-
-    // Boxes
-    var boxA = Matter.Bodies.rectangle(400, 200, 80, 80);
-    var boxB = Matter.Bodies.rectangle(450, 50, 80, 80);
-    var ground = Matter.Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
-
-    Matter.Composite.add(engine.world, [boxA, boxB, ground]);
-
-    Matter.Render.run(render)
-
-    var runner = Matter.Runner.create();
-    Matter.
-</script>
-
-<span>... test</span>
-    
-    */
 </script>
 
 <Text>Test Page</Text>
-
+<canvas use:initInteractive/>
