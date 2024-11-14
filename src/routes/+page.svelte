@@ -1,5 +1,3 @@
-<!-- Keep in mind, doctype is declared in src/app.html -->
-
 <script lang="ts">
 	import './style.scss';
 	import FlexColumn from '@components/FlexColumn.svelte';
