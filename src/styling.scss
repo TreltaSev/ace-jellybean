@@ -78,12 +78,6 @@ body .app {
   overflow: hidden;
 }
 
-span {
-  font-family: "Lato";
-  font-size: 1em;
-  opacity: 0.9;
-}
-
 /* |Flex Types|
 Holds all the different types of flex types to make it easier
 to apply flex styling to different components.
@@ -313,4 +307,14 @@ Extras
 
 .hug_bottom {
   margin-top: auto;
+}
+
+.hug_hcenter {
+  @extend .hug_left;
+  @extend .hug_right;
+}
+
+.hug_vcenter {
+  @extend .hug_top;
+  @extend .hug_bottom;
 }

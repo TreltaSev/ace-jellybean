@@ -3,13 +3,14 @@
   export let font = "Lato";
   export let size = "1em";
   export let stretch = "normal";
-  export let style = "normal";
+  export let fontStyle = "normal";
+  export let style = "";
   export let variant = "normal";
   export let weight = "normal";
   export let lineHeight = "normal";
-  export let color = "";
+  export let color = "white";
 
-  const InjectFont = `;color: ${color}; font: "${font}" ${size} ${stretch} ${style} ${variant} ${weight} ${lineHeight}`;
+  const InjectFont = `;color: ${color}; font-family: ${font}; font-size: ${size}; font-stretch: ${stretch}; font-style: ${style}; font-weight: ${weight}; line-height: ${lineHeight}`;
   $$restProps.style = $$restProps.style
     ? $$restProps.style + InjectFont
     : InjectFont;

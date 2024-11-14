@@ -1,8 +1,69 @@
-@use "/src/styling.scss" as *;
+@use '/src/styling.scss' as *;
 
 // Root Component
 .root {
-    @extend .fill_all;
-    @extend .align_items_center;
-    @extend .background;
+	@extend .fill_all;
+	@extend .align_items_start;
+	@extend .border_box;
+	background-color: #ffccff;
+	padding: 20px;
+}
+
+// List types
+ul.square {
+	list-style-type: square;
+}
+
+ul.empty {
+	list-style-type: circle;
+}
+
+// Spaced Bullet point
+ol.spaced > li,
+ul.spaced > li {
+	padding-left: 5px;
+}
+
+ol.alpha {
+	list-style-type: upper-alpha;
+}
+
+hr {
+	width: 100%;
+}
+
+h2,
+h3,
+ul,
+li {
+	font-family: 'Lato';
+	color: #009;
+}
+
+/* |Hugs|
+*/
+.hug_left {
+	margin-right: auto;
+}
+
+.hug_top {
+	margin-bottom: auto;
+}
+
+.hug_right {
+	margin-left: auto;
+}
+
+.hug_bottom {
+	margin-top: auto;
+}
+
+.hug_hcenter {
+	@extend .hug_left;
+	@extend .hug_right;
+}
+
+.hug_vcenter {
+	@extend .hug_top;
+	@extend .hug_bottom;
 }
