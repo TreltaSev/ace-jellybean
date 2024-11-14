@@ -58,7 +58,7 @@
 	<hr />
 
 	<!-- Last Section -->
-	<h3>Where to Buy</h3>
+	<h3><em>Where to Buy</em></h3>
 	<h3 class="hug_right">Yummy...Yummy...Yummy!</h3>
 	<FlexColumn style="gap: 10px">
 		<!-- This hurts to look at :I -->
