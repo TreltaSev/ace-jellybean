@@ -9,6 +9,10 @@
 	padding: 20px;
 }
 
+.no_event {
+	pointer-events: none;
+}
+
 // List types
 ul.square {
 	list-style-type: square;

@@ -2,6 +2,7 @@
 	import './style.scss';
 	import FlexColumn from '@components/FlexColumn.svelte';
 	import Text from '@components/Text.svelte';
+	import { BeanGenerator } from '@lib/components/Jellybean';
 </script>
 
 <!-- Inject to head -->
@@ -109,3 +110,6 @@
 		></Text
 	>
 </FlexColumn>
+
+<!-- Funni Name -->
+<BeanGenerator/>
